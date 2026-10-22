@@ -1,16 +1,16 @@
 
 # Define the folder containing the four Excel workbooks
-$folderPath = "c:\Users\franj\Downloads\Reports"
+$folderPath = "C:\Users\FXS404\Downloads\Reports"
 
 # Define the output workbook
 $dateString = Get-Date -Format "MM.dd.yyyy"
-$OutputFile = Join-Path $PSScriptRoot "IX440  $dateString.xlsx"
+$OutputFile = Join-Path $PSScriptRoot "IX440 $dateString.xlsx"
 
 # List of input workbooks
-$workbooks = @("IX440 SPD.xlsx", "IX440 Storeroom.xlsx", "IX112.xlsx", "PX110.xlsx")
+$workbooks = @("IX440 SPD.csv", "IX440 Storeroom.csv", "IX112.csv", "PX110.csv")
 
 # Columns to delete (right to left to avoid shifting issues)
-$columnsToDelete = @("Y", "X", "W", "V", "T", "S", "P", "O", "N", "J", "I", "E", "A")
+$columnsToDelete = @("Y", "X", "W", "V", "T", "S", "R", "P", "O", "N", "J", "I", "E", "A")
 # Start Excel
 $excel = New-Object -ComObject Excel.Application
 $excel.Visible = $false
@@ -100,17 +100,21 @@ try {
     Write-Host "Successfully combined workbooks into:"
     Write-Host $outputFile
 
+    # Delete Columns in 440 SPD
     $worksheet = $outputWorkbook.Worksheets.Item("IX440 SPD")
     
     foreach ($column in $columnsToDelete) {
         $worksheet.Columns.Item($column).Delete()
     }
 
+    # Delete Columns in 440 Storeroom
     $worksheet = $outputWorkbook.Worksheets.Item("IX440 Storeroom")
     
     foreach ($column in $columnsToDelete) {
         $worksheet.Columns.Item($column).Delete()
     }
+
+    Write-Host "Successfully deleted Columns"
 }
 
 catch {
@@ -133,4 +137,3 @@ finally {
     [GC]::Collect()
     [GC]::WaitForPendingFinalizers()
 }
-
