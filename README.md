@@ -1,9 +1,9 @@
 How to Install:
 
-Create Folder in Downloads Folder named "IX440 Report"
-Put IX440 Script.ps1 in the folder
-Right click on desktop and make a new shortcut 
-Paste the following line into the field, MAKE SURE TO UPDATE TO YOUR USERNAME: 
+1. Create Folder in Downloads Folder named "IX440 Report"
+2. Put IX440 Script.ps1 in the folder
+3. Right click on desktop and make a new shortcut 
+4. Paste the following line into the field, MAKE SURE TO UPDATE TO YOUR USERNAME: 
 
 powershell.exe -noexit -ExecutionPolicy Bypass -File "C:\Users\USERNAME\Downloads\IX440 Report\IX440 Script.ps1"
 
