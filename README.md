@@ -1,7 +1,7 @@
 How to Install:
 
-1.Select Code > download zip
-2.
+1. Select Code > download zip
+2. Extract Files
 3. Create Folder in Downloads Folder named "IX440 Report"
 4. Put IX440 Script.ps1 in the folder
 5. Right click on desktop and make a new shortcut 
