@@ -15,5 +15,14 @@ How To Use:
 1. Download IX440 SPD, STORE and PX110 as .csv
 2. Rename the 2 IX440 Files as "IX440 SPD" and "IX440 STORE"
 3. Put All .csv files "IX440 Report" folder
-4. Open previous IX440 in app from SharePoint
+4. Open previous IX440 in app from SharePoint (Needed for VLOOKUP)
 5. Run script using the shortcut
+
+
+What This Script Does:
+1. Copies data from CSV files into new Excell workbook
+2. Deletes unnecessary columns 
+3. Moves columns to proper place
+4. Runs text to column
+5. Inserts VLOOKUP data
+6. Saves IX440 report with todays date  
