@@ -149,6 +149,16 @@ try {
     $rangeM = $newSheet.Range("M2:M$lastRow")
     $rangeM.FillDown()
     
+    # Copy columns K, L, and M and paste values
+    $rangeKLM = $newSheet.Range("K2:M$lastRow")
+    $rangeKLM.Copy()
+    $rangeKLM.PasteSpecial(-4163)  # xlPasteValues
+
+    foreach ($cell in $rangeKLM.Cells) {
+        if ($cell.Value2 -is [double] -and $cell.Value2 -eq 0) {
+            $cell.ClearContents()
+        }
+    }
 
     # ==================================
     # COPY IX440 SPD DATA
@@ -219,6 +229,16 @@ try {
     $rangeM = $newSheet.Range("M2:M$lastRow")
     $rangeM.FillDown()
     
+    # Copy columns K, L, and M and paste values
+    $rangeKLM = $newSheet.Range("K2:M$lastRow")
+    $rangeKLM.Copy()
+    $rangeKLM.PasteSpecial(-4163)  # xlPasteValues
+
+    foreach ($cell in $rangeKLM.Cells) {
+        if ($cell.Value2 -is [double] -and $cell.Value2 -eq 0) {
+            $cell.ClearContents()
+        }
+    }
     # ==================================
     # Close Out Workbook
     # ==================================
