@@ -25,4 +25,5 @@ What This Script Does:
 3. Moves columns to proper place
 4. Runs text to column
 5. Inserts VLOOKUP data
-6. Saves IX440 report with todays date  
+6. Removes "0"s from blank VLOOKUPs
+7. Saves IX440 report with todays date  
